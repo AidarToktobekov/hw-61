@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import '../../types'
-// import CountryInfo from '../Country-info/CountryInfo.tsx'
+import CountryInfo from '../Country-info/CountryInfo.tsx'
 
 
 const List = ()=>{
@@ -59,7 +59,7 @@ const List = ()=>{
                     })}
                 </ul>
             </div>
-            {/* <CountryInfo name={countriesInfo.name} capital={countriesInfo.capital} borders={countriesInfo.borders} flags={countriesInfo.flags} population={countriesInfo.population}></CountryInfo> */}
+            <CountryInfo name={countriesInfo.name} capital={countriesInfo.capital} borders={countriesInfo.borders} flags={countriesInfo.flags} population={countriesInfo.population}></CountryInfo>
         </div>
         </>
     )
