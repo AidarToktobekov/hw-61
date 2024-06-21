@@ -10,32 +10,27 @@ const List = ()=>{
     let [countriesList , setCountriesList] = useState<[Countries]>([{name: 'countries are loading', alpha3Code: '',independent: true,}]);
     let [countriesInfo , setCountriesInfo] = useState({name: '', capital: '?',borders: [],flags: {png: ''}, population: '?'});
 
-
-
     useEffect(()=>{
         const countries = async()=>{
             const response = await fetch(URLcountry);
             if (response.ok) {
-                setCountriesList(await response.json())
+                setCountriesList(await response.json());
             }
             else{   
                 throw new Error('Something went wrong with network request');
             }
         }
         
-        countries()
+        countries();
         
     }, [])
 
     const getInfo = async(countryCode: string)=>{
         const response = await fetch(URLcountryCode + countryCode);
-        console.log(URLcountryCode + countryCode);
         
             if (response.ok) {
                 const countryCopy = await response.json()
-                setCountriesInfo(countryCopy);
-                console.log(countryCopy);
-                
+                setCountriesInfo(countryCopy);   
             }
             else{   
                 throw new Error('Something went wrong with network request');
